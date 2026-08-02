@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { useParams, Link } from "react-router-dom";
 import { getProductById } from "../services/productService";
 import Loading from "../components/Loading";
+import Navbar from "../components/Navbar";
 
 function ProductoDetalle() {
   const { id } = useParams();
@@ -30,6 +31,8 @@ function ProductoDetalle() {
   if (error) return <h3>{error}</h3>;
 
   return (
+    <>    
+      <Navbar/>
     <div className="container mt-5">
 
       <div className="card">
@@ -78,6 +81,7 @@ function ProductoDetalle() {
       </div>
 
     </div>
+    </>
   );
 }
 

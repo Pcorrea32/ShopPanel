@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { getProducts } from "../services/productService";
 import Loading from "../components/Loading";
+import Navbar from "../components/Navbar";
 
 function Productos() {
   const [productos, setProductos] = useState([]);
@@ -28,6 +29,9 @@ function Productos() {
   if (error) return <h3>{error}</h3>;
 
   return (
+    <>
+      <Navbar/>
+  
     <div className="container mt-4">
       <h2 className="mb-4">Lista de Productos</h2>
 
@@ -66,6 +70,7 @@ function Productos() {
         ))}
       </div>
     </div>
+    </>
   );
 }
 
